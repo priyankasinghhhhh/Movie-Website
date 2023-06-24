@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <title>Document</title>
+
+        <style>
+            #main-div {
+                border: 1px solid blue;
+                height: 230px;
+                width: 230px;
+            }
+
+            :root {
+                background-color: var(--radio-color);
+            }
+
+            body {
+                background-color: var(--radio-color);
+            }
+
+            .form-control {
+                margin: 50px;
+                border: 0;
+
+            }
+
+            .color-changer {
+                display: flex;
+                gap: 20px;
+                padding: 10px;
+                width: fit-content;
+                margin-inline: auto;
+                border: 0;
+                background-color: white;
+                border-bottom-left-radius: 15px;
+                border-bottom-right-radius: 15px;
+            }
+
+            input[type="radio"] {
+                appearance: none;
+                height: 1.5rem;
+                width: 1.5rem;
+                border: 2px solid white;
+                outline: 2px solid;
+                border-radius: 50%;
+            }
+
+            input[type="radio"]:checked {
+                background-color: var(--radio-color);
+            }
+
+            #Pink {
+                --radio-color: Pink;
+                color: pink;
+            }
+
+            #Blue {
+                --radio-color: blue;
+                color: blue;
+            }
+
+            #Green {
+                --radio-color: rgb(0, 128, 0, 50%);
+                color: rgb(0, 128, 0, 50%);
+            }
+
+            #Dark {
+                --radio-color: rgb(32, 42, 68, 50%);
+                color: rgb(32, 42, 68, 50%);
+            }
+
+            #grey {
+                --radio-color: rgb(181, 174, 175, 50%);
+                color: rgb(181, 174, 175, 50%);
+            }
+
+            :root:has(#Blue:checked) {
+                background-color: rgb(19, 64, 179, 50%);
+            }
+
+            :root:has(#Pink:checked) {
+                background-color: hsl(350, 100%, 88%, 50%);
+            }
+
+            :root:has(#Dark:checked) {
+                background-color: rgb(32, 42, 68, 50%);
+            }
+
+            :root:has(#Green:checked) {
+                background-color: hsl(120, 100%, 25%, 50%);
+            }
+
+
+
+            :root:has(#grey:checked) {
+                background-color: rgb(205, 183, 187, 50%);
+            }
+
+            .divsearch {
+                display: flex;
+                flex-direction: column;
+                border: 2px solid rgb(110, 110, 110, 50%);
+                margin: 1vw 4vw;
+                padding: 2em;
+            }
+
+            #title {
+                color: #0000ff;
+                text-align: center;
+                text-decoration: underline;
+            }
+
+            input {
+                outline: none;
+                font-size: 1em;
+                padding: 0.3em;
+            }
+
+            #res {
+                margin: 0px auto;
+                border: 2px solid grey;
+                display: flex;
+                flex-wrap: wrap;
+                justify-content: space-evenly;
+                align-items: center;
+                gap: 2em;
+                align-content: center;
+                margin: 1vw 4vw;
+            }
+        </style>
+    </head>
+
+    <body>
+
+        <div class="container">
+            <div id="main" class="divsearch">
+                <h2 id="title">SEARCH YOUR FAVORITE MOVIE</h2>
+                <div>
+                    <form id="addForm" class="form-inline mb-3">
+                        <input type="text" class=" mr-2" id="takeinput" placeholder="Search here..." />
+                        <input type="submit" id="submit" class="btn btn-dark" value="Submit" />
+                    </form>
+                </div>
+
+            </div>
+
+        </div>
+        <div>
+            <form class="form-control">
+                <fieldset class="color-changer">
+                    <input type="radio" id="grey" name="theme" checked />
+                    <input type="radio" id="Pink" name="theme" />
+                    <input type="radio" id="Blue" name="theme" />
+                    <input type="radio" id="Green" name="theme" />
+                    <input type="radio" id="Dark" name="theme" />
+                </fieldset>
+            </form>
+        </div>
+        <div id="res">
+
+        </div>
+        <script src="assign-2.js"></script>
+    </body>
+
+</html>
